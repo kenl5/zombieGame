@@ -24,8 +24,9 @@ public class playerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         moveInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        /*
         moveVelo = moveInput * moveSpeed;
-
+        
         Ray camRay = mainCam.ScreenPointToRay(Input.mousePosition);
         Plane ground = new Plane(Vector3.up, Vector3.zero);
         float rayLength;
@@ -37,13 +38,16 @@ public class playerController : MonoBehaviour {
 
             transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
         }
+        */
+        transform.rotation = Quaternion.LookRotation(moveInput);
+        transform.Translate(moveInput * moveSpeed * Time.deltaTime, Space.World);
 
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             gun.firing = true;
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetKeyUp(KeyCode.J))
         {
             gun.firing = false;
         }

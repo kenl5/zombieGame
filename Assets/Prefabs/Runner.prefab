@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDrop: {fileID: 4772480501118370510, guid: 49bf659107e516544b1b99de6043d50e,
     type: 3}
+  weapon: {fileID: 8793688788540667512, guid: 0f5e6128f6bac504a99ba33a8266c45f, type: 3}
   health: 4
   currentHealth: 0
   healthBar: {fileID: 114233079089599726}

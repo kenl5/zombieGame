@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class enemyHealth : MonoBehaviour {
     public GameObject itemDrop;
+    public GameObject weapon;
     public float health;
     public float currentHealth;
     float dropRate = 0.05f;
@@ -20,9 +21,19 @@ public class enemyHealth : MonoBehaviour {
             Destroy(gameObject);
             if(Random.Range(0f,1f) <= dropRate)
             {
-                var pickUp = Instantiate(itemDrop, gameObject.transform.position, Quaternion.identity);
+                if(Random.Range(0f,1f) <= 0.5)
+                {
+                    var pickUp = Instantiate(itemDrop, gameObject.transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    var pickUp_weapon = Instantiate(weapon, gameObject.transform.position, Quaternion.identity);
+                }
+                
             }
+          
         }
+
 	}
 
     float healthPercentage()

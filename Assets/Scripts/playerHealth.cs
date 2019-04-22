@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Timers;
+
 
 public class playerHealth : MonoBehaviour {
 
-    public float startHealth = 10;
+    public float startHealth;
     public float currentHealth;
 
     public float hurtTime;
@@ -71,7 +73,7 @@ public class playerHealth : MonoBehaviour {
 
     // For players to pick up the items
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "HP")
         {
@@ -85,7 +87,16 @@ public class playerHealth : MonoBehaviour {
             flashCount = hurtTime;
             rend.material.SetColor("_Color", Color.red);
         }
+        if(other.tag == "weapon")
+        {
+            Destroy(other.gameObject);
+            if (gunController.fireRate > 0.05)
+            {
+                gunController.fireRate *= 0.7f;
+            }
+        }
     }
+
 
     float healthPercentage()
     {

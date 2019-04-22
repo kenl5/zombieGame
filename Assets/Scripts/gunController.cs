@@ -9,7 +9,7 @@ public class gunController : MonoBehaviour {
     public bulletController bullet;
     public float speed;
 
-    public float fireRate;
+    public static float fireRate = 0.1f;
     private float shotCounter;
 
     public Transform firePoint;
