@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class playerHealth : MonoBehaviour {
 
-    public float startHealth;
+    public float startHealth = 10;
     public float currentHealth;
 
     public float hurtTime;
@@ -67,6 +67,24 @@ public class playerHealth : MonoBehaviour {
 
         timerText.text = minutes + ":" + seconds;
 
+    }
+
+    // For players to pick up the items
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "HP")
+        {
+            currentHealth += 1;
+            if (currentHealth > startHealth)
+            {
+                currentHealth = startHealth;
+            }
+            Destroy(other.gameObject);
+            healthBar.value = healthPercentage();
+            flashCount = hurtTime;
+            rend.material.SetColor("_Color", Color.red);
+        }
     }
 
     float healthPercentage()

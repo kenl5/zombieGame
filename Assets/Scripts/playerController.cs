@@ -49,6 +49,22 @@ public class playerController : MonoBehaviour {
         }
 	}
 
+    /*
+    // For players to pick up the items   
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "HP")
+        {
+            playerHealth.currentHealth += 2;
+            if(playerHealth.currentHealth > playerHealth.startHealth)
+            {
+                playerHealth.currentHealth = playerHealth.startHealth;
+            }
+            Destroy(other.gameObject);
+        }
+    }
+    */
+
     private void FixedUpdate()
     {
         myRigidBody.velocity = moveVelo;
