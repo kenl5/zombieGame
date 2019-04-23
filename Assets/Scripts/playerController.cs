@@ -41,9 +41,11 @@ public class playerController : MonoBehaviour {
             transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
         }
         */
-        transform.rotation = Quaternion.LookRotation(moveInput);
-        transform.Translate(moveInput * moveSpeed * Time.deltaTime, Space.World);
-
+        if (moveInput != Vector3.zero){
+            transform.rotation = Quaternion.LookRotation(moveInput);
+            transform.Translate(moveInput * moveSpeed * Time.deltaTime, Space.World);
+        }
+        
         if (Input.GetKeyDown(KeyCode.J))
         {
             gun.firing = true;
