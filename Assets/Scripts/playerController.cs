@@ -13,12 +13,14 @@ public class playerController : MonoBehaviour {
     private Camera mainCam;
 
     public gunController gun;
+    public GameObject wall;
+    private int wallCount;
 
 	// Use this for initialization
 	void Start () {
         myRigidBody = GetComponent<Rigidbody>();
         mainCam = FindObjectOfType<Camera>();
-
+        wallCount = 0;
     }
 	
 	// Update is called once per frame
@@ -50,6 +52,11 @@ public class playerController : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.J))
         {
             gun.firing = false;
+        }
+        if (Input.GetKeyDown(KeyCode.K) && wallCount < 5)
+        {
+            Instantiate(wall, transform.position, Quaternion.identity);
+            wallCount++;
         }
 	}
 
