@@ -14,7 +14,7 @@ public class hurtPlayer : MonoBehaviour {
         }
         else
         {
-            other.gameObject.GetComponent<player2Health>().HurtPlayer(damage); //set second player's tag to "Player2"
+            //other.gameObject.GetComponent<player2Health>().HurtPlayer(damage); //set second player's tag to "Player2"
         }
     }
 }

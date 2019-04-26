@@ -592,9 +592,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d9b860e0c03dd47b87e80f8756a886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemDrop: {fileID: 4772480501118370510, guid: 49bf659107e516544b1b99de6043d50e,
+  itemDrop: {fileID: 1175690876246280797, guid: 9e8540549c5cc15469fedf38d549dc53,
     type: 3}
-  weapon: {fileID: 8793688788540667512, guid: 0f5e6128f6bac504a99ba33a8266c45f, type: 3}
+  weapon: {fileID: 7548402160592640308, guid: ce416151c3e9de84aa56b1abc97a5b0e, type: 3}
   health: 5.94
   currentHealth: 0
   healthBar: {fileID: 114572146928928540}
