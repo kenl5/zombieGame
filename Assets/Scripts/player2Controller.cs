@@ -13,7 +13,9 @@ public class player2Controller : MonoBehaviour
 
     private Camera mainCam;
 
-    public gun2Controller gun;
+    public gunController gun;
+    public GameObject wall;
+    private int wallCount;
 
     // Use this for initialization
     void Start()
@@ -26,8 +28,9 @@ public class player2Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveInput = new Vector3(Input.GetAxis("Horizontal2"), 0f, Input.GetAxis("Vertical2"));
-        moveVelo = moveInput * moveSpeed;
+        
+         moveInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        // moveVelo = moveInput * moveSpeed;
 
         //Ray camRay = mainCam.ScreenPointToRay(Input.mousePosition);
         //Plane ground = new Plane(Vector3.up, Vector3.zero);
@@ -44,14 +47,19 @@ public class player2Controller : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(moveInput);
         transform.Translate(moveInput * moveSpeed * Time.deltaTime, Space.World);
 
-        if (Input.GetKeyDown("enter"))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             gun.firing = true;
         }
 
-        if (Input.GetKeyUp("enter"))
+        if (Input.GetKeyUp(KeyCode.K))
         {
             gun.firing = false;
+        }
+        if (Input.GetKeyDown(KeyCode.L) && wallCount < 5)
+        {
+            Instantiate(wall, transform.position, Quaternion.identity);
+            wallCount++;
         }
     }
 

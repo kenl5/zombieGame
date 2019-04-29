@@ -46,16 +46,16 @@ public class playerController : MonoBehaviour {
             transform.Translate(moveInput * moveSpeed * Time.deltaTime, Space.World);
         }
         
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             gun.firing = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.J))
+        if (Input.GetKeyUp(KeyCode.C))
         {
             gun.firing = false;
         }
-        if (Input.GetKeyDown(KeyCode.K) && wallCount < 5)
+        if (Input.GetKeyDown(KeyCode.V) && wallCount < 5)
         {
             Instantiate(wall, transform.position, Quaternion.identity);
             wallCount++;
