@@ -29,7 +29,7 @@ public class player2Controller : MonoBehaviour
     void Update()
     {
         
-         moveInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+         moveInput = new Vector3(Input.GetAxis("Horizontal2"), 0f, Input.GetAxis("Vertical2"));
         // moveVelo = moveInput * moveSpeed;
 
         //Ray camRay = mainCam.ScreenPointToRay(Input.mousePosition);
