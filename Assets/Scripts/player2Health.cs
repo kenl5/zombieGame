@@ -23,12 +23,42 @@ public class player2Health : MonoBehaviour
     public Text endText;
     private float startTime;
 
+    public GameObject player;
+
+    public GameObject ZombieBody2;
+    public GameObject PlayerBody2;
+
+    public bool dead = false;
+    public bool zombied = false;
+
+    public GameObject Body2
+    {
+        get
+        {
+            if (PlayerBody2.activeInHierarchy)
+                return PlayerBody2;
+            else
+                return ZombieBody2;
+        }
+        set
+        {
+            if (PlayerBody2.activeInHierarchy)
+                PlayerBody2 = value;
+            else
+                ZombieBody2 = value;
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
         currentHealth = startHealth;
-        rend = GetComponent<Renderer>();
-        storedColor = rend.material.GetColor("_Color");
+        player = GameObject.Find("Player");
+
+        Body2 = transform.Find("Player2Body").gameObject;
+
+        storedColor = Body2.GetComponent<Renderer>().material.GetColor("_Color");
+
 
         healthBar.value = healthPercentage();
 
@@ -37,24 +67,57 @@ public class player2Health : MonoBehaviour
     }
 
 
+    public void CreateZombie2()
+    {
+        //Vector3 spawnPosition22 = new Vector3(Body.transform.position.x, 0, Body.transform.position.z);
+
+        PlayerBody2.SetActive(false);
+
+        Vector3 spawnPosition22 = new Vector3(PlayerBody2.transform.position.x, 0, PlayerBody2.transform.position.z);
+
+        ZombieBody2.transform.position = spawnPosition22;
+
+        ZombieBody2.SetActive(true);
+        zombied = (true);
+
+    }
     // Update is called once per frame
     void Update()
     {
         if (currentHealth <= 0)
         {
-            done = true;
-            gameObject.SetActive(false);
+            dead = true;
+            if (player.GetComponent<playerHealth>().dead == false)
+            {
+
+                if(!zombied)
+                {
+                    CreateZombie2();
+                }
+
+
+            }
+            else
+            {
+                done = true;
+                gameObject.transform.GetChild(0).gameObject.SetActive(false);
+
+            }
+
 
         }
-
-        if (flashCount > 0)
+        if (!dead)
         {
-            flashCount -= Time.deltaTime;
-            if (flashCount <= 0)
+            if (flashCount > 0)
             {
-                rend.material.SetColor("_Color", storedColor);
+                flashCount -= Time.deltaTime;
+                if (flashCount <= 0)
+                {
+                    Body2.GetComponent<Renderer>().material.SetColor("_Color", storedColor);
+                }
             }
         }
+
 
         //use for timer
         if (done)
@@ -82,6 +145,6 @@ public class player2Health : MonoBehaviour
         currentHealth -= damage;
         healthBar.value = healthPercentage();
         flashCount = hurtTime;
-        rend.material.SetColor("_Color", Color.red);
+        Body2.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
     }
 }
