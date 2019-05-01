@@ -1,18 +1,18 @@
 ﻿<Properties StartupConfiguration="{DA7E2AAD-0DEC-3BFA-4128-84F1F81C1954}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/zombiePlayerDamage2.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/playerHealth.cs">
     <Files>
-      <File FileName="Assets/Scripts/zombiePlayerController.cs" Line="34" Column="39" />
-      <File FileName="Assets/Scripts/playerController.cs" Line="10" Column="5" />
+      <File FileName="Assets/Scripts/zombiePlayerController.cs" Line="36" Column="57" />
+      <File FileName="Assets/Scripts/playerController.cs" Line="5" Column="48" />
       <File FileName="Assets/Scripts/hurtPlayer.cs" Line="19" Column="10" />
-      <File FileName="Assets/Scripts/enemyController.cs" Line="62" Column="1" />
+      <File FileName="Assets/Scripts/enemyController.cs" Line="32" Column="9" />
       <File FileName="Assets/Scripts/player2Controller.cs" Line="49" Column="41" />
-      <File FileName="Assets/Scripts/playerHealth.cs" Line="99" Column="36" />
-      <File FileName="Assets/Scripts/player2Health.cs" Line="101" Column="36" />
-      <File FileName="Assets/Scripts/zombiePlayer2Controller.cs" Line="30" Column="70" />
+      <File FileName="Assets/Scripts/playerHealth.cs" Line="81" Column="9" />
+      <File FileName="Assets/Scripts/player2Health.cs" Line="89" Column="25" />
+      <File FileName="Assets/Scripts/zombiePlayer2Controller.cs" Line="36" Column="57" />
       <File FileName="Assets/Scripts/cameraFollow.cs" Line="14" Column="1" />
-      <File FileName="Assets/Scripts/zombiePlayerDamage.cs" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/zombiePlayerDamage.cs" Line="21" Column="15" />
       <File FileName="Assets/Scripts/zombieSpawner.cs" Line="27" Column="10" />
-      <File FileName="Assets/Scripts/zombiePlayerDamage2.cs" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/zombiePlayerDamage2.cs" Line="21" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +20,7 @@
           <Node name="zombieGame" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="zombiePlayerDamage2.cs" selected="True" />
+                <Node name="playerHealth.cs" selected="True" />
               </Node>
             </Node>
           </Node>
