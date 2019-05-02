@@ -14976,7 +14976,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Move: WASD'
+  m_Text: 'Move: P1: WASD, P2: Arrow keys'
 --- !u!222 &1074619980
 CanvasRenderer:
   m_ObjectHideFlags: 0
