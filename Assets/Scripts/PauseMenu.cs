@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour {
 
     public GameObject pauseMenuUI;
     public GameObject controlMenuUI;
+    public GameObject endUI;
 
     private void Start()
     {

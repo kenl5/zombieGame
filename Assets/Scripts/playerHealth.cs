@@ -32,6 +32,8 @@ public class playerHealth : MonoBehaviour {
     public bool dead = false;
     public bool zombied = false;
 
+    public GameObject restart;
+
     public GameObject Body
     {
         get
@@ -52,6 +54,7 @@ public class playerHealth : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        restart.SetActive(false);
         currentHealth = startHealth;
 
         player2 = GameObject.Find("Player2");
@@ -64,6 +67,7 @@ public class playerHealth : MonoBehaviour {
 
         //use for timer
         startTime = Time.time;
+
     }
 
     public void CreateZombie()
@@ -120,6 +124,7 @@ public class playerHealth : MonoBehaviour {
         {
             endText.color = Color.red;
             endText.text = "you survived: " + timerText.text;
+            restart.SetActive(true);
             return;
         }
         float t = Time.time - startTime;
